@@ -26,9 +26,20 @@
     </md-toolbar>
     <div layout="row" layout-sm="column">
         <div  flex="20" flex-order-sm="2" layout="column">
-            <span>{{calendar.selected.year}},{{calendar.selected.month}}</span>
+            <span>
+                <md-button><md-tooltip>25th</md-tooltip> <fa name="angle-left"></fa></md-button>
+                {{calendar.selected.year}},{{calendar.selected.month}}
+                <md-button><md-tooltip>26th</md-tooltip> <fa name="angle-right"></fa></md-button>
+            </span>
             <span>{{calendar.selected.weekday}}</span>
             <span class="title">{{calendar.selected.day}}</span>
+            <md-list>
+                <md-item ng-repeat="item in calendar.schedule">
+                    <md-item-content>
+                        {{item}}
+                    </md-item-content>
+                </md-item>
+            </md-list>
         </div>
         <div flex="40"  flex-order-sm="0">
             Important Stuff
@@ -59,7 +70,8 @@
                             weekday: 'mon',
                             year: 2015,
                             month: 'January'
-                        }
+                        },
+                        schedule: [9,10,11,12,13,14,15,16,17]
                     };
 
                     $scope.user = {
