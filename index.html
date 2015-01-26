@@ -1,48 +1,72 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head >
-	<title>Angular Material Test</title>
-    
+    <title>Angular Material Test</title>
+
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
 </head>
 <body ng-app="myApp" ng-controller="DemoCtrl">
-    {{info}}
+{{info}}
 
-    <md-toolbar >
-      <h2 class="md-toolbar-tools">
+<md-toolbar >
+    <h2 class="md-toolbar-tools">
         <span>Toolbar</span>
-      </h2>
-    </md-toolbar>
+    </h2>
+</md-toolbar>
 
 <md-switch aria-label="Switch 1">
-    Switch 1: 
-  </md-switch>
+    Switch 1:
+</md-switch>
 <md-button>test</md-button>
 
 <div class="ng-scope">
-  <section layout="row" layout-sm="column" layout-align="center center">
-  	<md-button class="md-button md-raised md-default-theme"><span class="ng-binding ng-scope">Button</span><div class="md-ripple-container"></div></md-button>
-  	</div>
-  	<!-- <button class="md-primary md-button md-default-theme" ng-transclude="" md-no-ink=""><span class="ng-scope">Primary (md-noink)</span></button>
-  	<button class="md-primary md-button md-default-theme" ng-transclude="" ng-disabled="true" aria-disabled="true" disabled="disabled"><span class="ng-scope">Disabled</span></button>
-  	<button class="md-warn md-button md-default-theme" ng-transclude=""><span class="ng-binding ng-scope">Warn</span></button> -->
-  </section>
+    <section layout="row" layout-sm="column" layout-align="center center">
+        <md-button class="md-button md-raised md-default-theme"><span class="ng-binding ng-scope">Button</span><div class="md-ripple-container"></div></md-button>
+</div>
+<!-- <button class="md-primary md-button md-default-theme" ng-transclude="" md-no-ink=""><span class="ng-scope">Primary (md-noink)</span></button>
+<button class="md-primary md-button md-default-theme" ng-transclude="" ng-disabled="true" aria-disabled="true" disabled="disabled"><span class="ng-scope">Disabled</span></button>
+<button class="md-warn md-button md-default-theme" ng-transclude=""><span class="ng-binding ng-scope">Warn</span></button> -->
+</section>
+
+<md-progress-linear md-mode="indeterminate"></md-progress-linear>
+
+<md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column">
+    <md-input-container>
+        <label>Title</label>
+        <input ng-model="user.title">
+    </md-input-container>
+    <md-input-container>
+        <label>Email</label>
+        <input ng-model="user.email" type="email">
+    </md-input-container>
+</md-content>
 
 
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/hammerjs/hammer.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
 
+<script type="text/javascript">
+    angular.module('myApp', ['ngMaterial'])
+            .controller('DemoCtrl', function($scope){
+                $scope.info = 'angular app working!';
 
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/hammerjs/hammer.js"></script>
-    <script src="bower_components/angular-material/angular-material.js"></script>
-
-	<script type="text/javascript">
-		angular.module('myApp', ['ngMaterial'])
-		.controller('DemoCtrl', function($scope){
-			$scope.info = 'angular app working!';
-		});   
-	</script>     
+                $scope.user = {
+                    title: 'Developer',
+                    email: 'ipsum@lorem.com',
+                    firstName: '',
+                    lastName: '' ,
+                    company: 'Google' ,
+                    address: '1600 Amphitheatre Pkwy' ,
+                    city: 'Mountain View' ,
+                    state: 'CA' ,
+                    biography: 'Loves kittens, snowboarding, and can type at 130 WPM.\n\nAnd rumor has it she bouldered up Castle Craig!',
+                    postalCode : '94043'
+                };
+            });
+</script>
 </body>
 </html>

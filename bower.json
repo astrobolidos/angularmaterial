@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-material": "~0.7.0"
+    "angular-material": "~0.7.0",
+    "angular-fontawesome": "~0.3.0"
   }
 }
