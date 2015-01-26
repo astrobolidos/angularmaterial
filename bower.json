@@ -1,0 +1,20 @@
+{
+  "name": "angularmaterial",
+  "version": "0.0.0",
+  "homepage": "https://github.com/astrobolidos/angularmaterial",
+  "authors": [
+    "Lisandro Pacheco <lisandroalavez@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~0.7.0"
+  }
+}
