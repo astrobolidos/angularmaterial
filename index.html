@@ -5,6 +5,8 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css.css">
 </head>
 <body ng-app="myApp" ng-controller="DemoCtrl">
     <md-toolbar class="md-default-theme">
@@ -23,8 +25,10 @@
         </div>
     </md-toolbar>
     <div layout="row" layout-sm="column">
-        <div flex="20" flex-order-sm="2">
-            Calendar
+        <div  flex="20" flex-order-sm="2" layout="column">
+            <span>{{calendar.selected.year}},{{calendar.selected.month}}</span>
+            <span>{{calendar.selected.weekday}}</span>
+            <span class="title">{{calendar.selected.day}}</span>
         </div>
         <div flex="40"  flex-order-sm="0">
             Important Stuff
@@ -33,6 +37,7 @@
             Stuff
         </div>
     </div>
+
 
 
     <script src="bower_components/angular/angular.js"></script>
@@ -47,6 +52,15 @@
         angular.module('myApp', ['ngMaterial','picardy.fontawesome'])
                 .controller('DemoCtrl', function($scope){
                     $scope.info = 'angular app working!';
+
+                    $scope.calendar = {
+                        selected: {
+                            day: 26,
+                            weekday: 'mon',
+                            year: 2015,
+                            month: 'January'
+                        }
+                    };
 
                     $scope.user = {
                         title: 'Developer',
