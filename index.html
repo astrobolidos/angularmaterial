@@ -5,6 +5,7 @@
 
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
 </head>
 <body ng-app="myApp" ng-controller="DemoCtrl">
 {{info}}
@@ -15,19 +16,35 @@
     </h2>
 </md-toolbar>
 
-<md-switch aria-label="Switch 1">
-    Switch 1:
-</md-switch>
-<md-button>test</md-button>
 
-<div class="ng-scope">
+
+
+
+
     <section layout="row" layout-sm="column" layout-align="center center">
-        <md-button class="md-button md-raised md-default-theme"><span class="ng-binding ng-scope">Button</span><div class="md-ripple-container"></div></md-button>
-</div>
-<!-- <button class="md-primary md-button md-default-theme" ng-transclude="" md-no-ink=""><span class="ng-scope">Primary (md-noink)</span></button>
-<button class="md-primary md-button md-default-theme" ng-transclude="" ng-disabled="true" aria-disabled="true" disabled="disabled"><span class="ng-scope">Disabled</span></button>
-<button class="md-warn md-button md-default-theme" ng-transclude=""><span class="ng-binding ng-scope">Warn</span></button> -->
-</section>
+        <md-switch aria-label="Switch 1">
+            Switch 1:
+        </md-switch>
+
+        <md-button>test</md-button>
+
+        <md-button class="md-button">
+            <fa name="github" size="4">asdf</fa>
+        </md-button>
+
+        <md-button class="md-button md-raised md-default-theme">
+            <span class="ng-binding ng-scope">Button</span>
+            <div class="md-ripple-container"></div>
+        </md-button>
+
+        <md-button class="md-fab md-primary" aria-label="Comment">
+            <fa name="github" size="3">asdf</fa>
+
+            </md-button>
+
+        <fa name="github" size="4">asdf</fa>
+    </section>
+
 
 <md-progress-linear md-mode="indeterminate"></md-progress-linear>
 
@@ -61,10 +78,11 @@
 <script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/hammerjs/hammer.js"></script>
 <script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/angular-fontawesome/dist/angular-fontawesome.min.js"></script>
 <script src="js.js"></script> <!-- needed for the input animations -->
 
 <script type="text/javascript">
-    angular.module('myApp', ['ngMaterial'])
+    angular.module('myApp', ['ngMaterial','picardy.fontawesome'])
             .controller('DemoCtrl', function($scope){
                 $scope.info = 'angular app working!';
 
