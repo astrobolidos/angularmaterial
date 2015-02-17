@@ -1,2 +1,3 @@
 body { font-family: Roboto, sans-serif }
 .title { font-weight: 100; font-size: 40px;}
+.timeBlock { height: 50px; width: 80%; border: 1px solid gray; float: right;}

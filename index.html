@@ -35,8 +35,8 @@
             <span class="title">{{calendar.selected.day}}</span>
             <md-list>
                 <md-item ng-repeat="item in calendar.schedule">
-                    <md-item-content>
-                        {{item}}
+                    <md-item-content flex>
+                        <span>{{item}}<span><div class="timeBlock"></div>
                     </md-item-content>
                 </md-item>
             </md-list>
@@ -48,8 +48,6 @@
             Stuff
         </div>
     </div>
-
-
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
